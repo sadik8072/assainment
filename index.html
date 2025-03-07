@@ -1,11 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>assainment</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment-5</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .poppins-font {
+        font-family: "Poppins", sans-serif;
+        font-weight: 100;
+        font-style: normal;
+      }
+    </style>
+  </head>
+  <body class="poppins-font bg-[#F4F7FF] primary_color">
+    <header class="container mx-auto py-6">
+      <div class="navbar bg-base-100 rounded-xl px-5">
+        <div class="navbar-start">
+          <div class="flex items-center justify-center space-x-2">
+            <img src="./assets/logo.png" alt="" />
+            <h1 class="font-light text-3xl">
+              Dev<span class="font-bold">Board</span>
+            </h1>
+          </div>
+        </div>
+        <div class="navbar-end space-x-3">
+          <div>
+            <a class="btn p-3 rounded-3xl"
+              ><img src="./assets/checkbox.png" alt="" />
+              <span id="sit" class="count_task text-2xl pl-1">23</span></a
+            >
+          </div>
+          <a onclick="changeRgb()" class="btn rounded-full"
+            ><img src="./assets/theme-btn.png" alt=""
+          /></a>
+        </div>
+      </div>
+    </header>
+    <!-- main container -->
+    <section class="container mx-auto py-6 flex gap-4 rounded-lg">
+      <!--  -->
+      <div class="w-11/12 bg-white rounded-lg pb-6">
+        <!--  -->
+        <div class="cards grid grid-cols-4 gap-5 px-5 py-6">
+          <div class="bg-[#F4F7FF] rounded-lg">
+            <div class="flex items-center space-x-3 p-4">
+              <img src="./assets/checkbox.png" alt="" />
+              <div>
+                <p>Task Assigned</p>
+                <h1 id="sit-let" class="task_count font-bold">6</h1>
+              </div>
+            </div>
+          </div>
+          <div
+            id="login-btn"
+            class="bg-gradient-to-tr from-blue-900 to-blue-300 text-white rounded-lg col-span-2"
+          >
+            <div class="flex items-center space-x-3 px-10">
+              <div><img src="./assets/board.png" alt="" /></div>
+              <p>
+                Discover Something <br />
+                New Today!
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <div class="bg-[#F4F7FF] rounded-lg">
+              <div class="flex items-center space-x-3 p-4">
+                <div>
+                  <img src="./assets/calender.png" alt="" />
+                </div>
+                <div>
+                  <p>wed,</p>
+                  <h1 class="font-bold">Jul 28 2025</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--  -->
+        <div class="grid grid-cols-3 gap-4 px-5">
+          <div id="head-count" class="bg-[#F4F7FF] space-y-4 rounded-lg p-4">
+            <p class="bg-white w-24 p-2 rounded-lg text-xs">ShopEase</p>
+            <h3 class="title text-[23px] font-medium">
+              Fix Mobile Button Issue
+            </h3>
+            <p class="bg-white text-sm rounded-lg p-2">
+              Debug using Chrome DevTools, check for overlapping elements, and
+              ensure onClick works properly and ensure onClick works properly
+            </p>
+            <div class="flex justify-between">
+              <p class="text-xs">
+                Deadline
+                <br />
+                <span class="font-bold">21 March 2025</span>
+              </p>
+              <button
+                onclick="addBtn1()"
+                id="test1"
+                class="complete-btn bg-blue-700 text-white px-4 py-2 rounded-lg disabled:bg-blue-200 disabled:cursor-not-allowed disabled:opacity-80"
+              >
+                Completed
+              </button>
+            </div>
+          </div>
+          <div id="head-count" class="bg-[#F4F7FF] space-y-4 rounded-lg p-4">
+            <p class="bg-white w-24 p-2 rounded-lg text-xs">CloudSync</p>
+            <h3 class="title text-2xl font-medium">Add Dark Mode</h3>
+            <p class="bg-white text-sm rounded-lg p-2">
+              Store the user's preference in localStorage, update CSS variables
+              dynamically, and apply a smooth transition effect.
+            </p>
+            <div class="flex justify-between">
+              <p class="text-xs">
+                Deadline
+                <br />
+                <span class="font-bold">21 March 2025</span>
+              </p>
+              <button
+                onclick="addBtn2()"
+                id="test2"
+                class="complete-btn bg-blue-700 text-white px-4 py-2 rounded-lg disabled:bg-blue-200 disabled:cursor-not-allowed disabled:opacity-80"
+              >
+                Completed
+              </button>
+            </div>
+          </div>
+          <div class="bg-[#F4F7FF] space-y-4 rounded-lg p-4">
+            <p class="bg-white w-24 p-2 rounded-lg text-xs">SwiftPay</p>
+            <h3 class="title text-[23px] font-medium">Optimize Home page</h3>
+            <p class="bg-white text-sm rounded-lg p-2">
+              Debug using Chrome DevTools, check for overlapping elements, and
+              ensure onClick works properly and ensure onClick works properly
+            </p>
+            <div class="flex justify-between">
+              <p class="text-xs">
+                Deadline
+                <br />
+                <span class="font-bold">21 March 2025</span>
+              </p>
+              <button
+                onclick="addBtn3()"
+                id="test3"
+                class="complete-btn bg-blue-700 text-white px-4 py-2 rounded-lg disabled:bg-blue-200 disabled:cursor-not-allowed disabled:opacity-80"
+              >
+                Completed
+              </button>
+            </div>
+          </div>
+          <div class="bg-[#F4F7FF] space-y-4 rounded-lg p-4">
+            <p class="bg-white w-24 p-2 rounded-lg text-xs">Meta</p>
+            <h3 class="title text-[23px] font-medium">Add new emoji 🤲</h3>
+            <p class="bg-white text-sm rounded-lg p-2">
+              Debug using Chrome DevTools, check for overlapping elements, and
+              ensure onClick works properly and ensure onClick works properly
+            </p>
+            <div class="flex justify-between">
+              <p class="text-xs">
+                Deadline
+                <br />
+                <span class="font-bold">21 March 2025</span>
+              </p>
+              <button
+                onclick="addBtn4()"
+                id="test4"
+                class="complete-btn bg-blue-700 text-white px-4 py-2 rounded-lg disabled:bg-blue-200 disabled:cursor-not-allowed disabled:opacity-80"
+              >
+                Completed
+              </button>
+            </div>
+          </div>
+          <div class="bg-[#F4F7FF] space-y-4 rounded-lg p-4">
+            <p class="bg-white w-24 p-2 rounded-lg text-xs">Google LLC</p>
+            <h3 class="title text-[23px] font-medium">Integrate OpenAI API</h3>
+            <p class="bg-white text-sm rounded-lg p-2">
+              Debug using Chrome DevTools, check for overlapping elements, and
+              ensure onClick works properly and ensure onClick works properly
+            </p>
+            <div class="flex justify-between">
+              <p class="text-xs">
+                Deadline
+                <br />
+                <span class="font-bold">21 March 2025</span>
+              </p>
+              <button
+                onclick="addBtn5()"
+                id="test5"
+                class="complete-btn bg-blue-700 text-white px-4 py-2 rounded-lg disabled:bg-blue-200 disabled:cursor-not-allowed disabled:opacity-80"
+              >
+                Completed
+              </button>
+            </div>
+          </div>
+          <div class="bg-[#F4F7FF] space-y-4 rounded-lg p-4">
+            <p class="bg-white w-24 p-2 rounded-lg text-xs">Glassdoar</p>
+            <h3 class="title text-[23px] font-medium">Improve Job searching</h3>
+            <p class="bg-white text-sm rounded-lg p-2">
+              Debug using Chrome DevTools, check for overlapping elements, and
+              ensure onClick works properly and ensure onClick works properly
+            </p>
+            <div class="flex justify-between">
+              <p class="text-xs">
+                Deadline
+                <br />
+                <span class="font-bold">21 March 2025</span>
+              </p>
+              <button
+                onclick="addBtn6()"
+                id="test6"
+                class="complete-btn bg-blue-700 text-white px-4 py-2 rounded-lg disabled:bg-blue-200 disabled:cursor-not-allowed disabled:opacity-80"
+              >
+                Completed
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- -->
+      <div class="w-3/12 bg-white rounded-lg pb-6">
+        <div class="flex items-center justify-center space-x-2 mt-6 mb-3">
+          <img src="./assets/activity.png" alt="" />
+          <h3 class="font-bold">Activity Log</h3>
+        </div>
+        <div class="text-center mb-4">
+          <button
+            onclick="addBtn6()"
+            id="cashout-box"
+            class="bg-blue-700 px-3 py-2 text-white font-normal rounded-lg"
+          >
+            Clear History
+          </button>
+        </div>
+        <div id="transaction-container"></div>
+      </div>
+    </section>
+    <script src="./script/login.js"></script>
+    <script src="./script/script.js"></script>
+  </body>
 </html>
